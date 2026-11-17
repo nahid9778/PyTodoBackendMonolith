@@ -9,8 +9,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# connection_string = os.getenv("CONNECTION_STRING")
-connection_string = "UPDATE CONNECTION STRING HERE"
+connection_string = os.getenv("CONNECTION_STRING")
+if not connection_string:
+    print("CONNECTION_STRING is not set.")
 
 app = FastAPI()
 
